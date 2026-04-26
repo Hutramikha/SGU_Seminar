@@ -1,0 +1,8 @@
+* Tich cuc
+python visualize.py --sentence "this movie is wonderful and the acting is great"
+
+* Tieu cuc
+python visualize.py --sentence "the plot of this film is not good at all"
+
+* Trung lap
+python visualize.py --sentence "the music was okay but the story was boring"

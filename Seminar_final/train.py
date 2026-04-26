@@ -11,6 +11,9 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from model import TransformerClassifier
 
+# Bo sung: khac phuc loi OMP
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 def set_seed(seed: int = 42):
     random.seed(seed)

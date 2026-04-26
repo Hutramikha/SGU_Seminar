@@ -19,13 +19,13 @@ def scaled_dot_product_attention(Q, K, V):
     d_k = Q.size(-1)
 
     # TODO: tinh scores = Q @ K^T / sqrt(d_k)
-    scores = ...
+    scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(d_k)
 
     # TODO: ap dung softmax tren chieu cuoi
-    weights = ...
+    weights = F.softmax(scores, dim=-1)
 
     # TODO: tinh output = weights @ V
-    output = ...
+    output = torch.matmul(weights, V)
 
     return output, weights
 
@@ -64,14 +64,14 @@ class FeedForwardNetwork(nn.Module):
     def __init__(self, d_model: int, d_ff: int):
         super().__init__()
         # TODO 2: Sinh vien tu cai dat FFN = Linear(d_model, d_ff) -> ReLU -> Linear(d_ff, d_model)
-        self.fc1 = ...
-        self.fc2 = ...
+        self.fc1 = nn.Linear(d_model, d_ff)
+        self.fc2 = nn.Linear(d_ff, d_model)
 
     def forward(self, x):
         # TODO 3: Viet forward pass cua FFN
-        x = ...
-        x = ...
-        x = ...
+        x = self.fc1(x)
+        x = torch.relu(x)
+        x = self.fc2(x)
         return x
 
 

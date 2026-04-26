@@ -7,6 +7,9 @@ import torch
 
 from model import TransformerClassifier
 
+# Bo sung: khac phuc loi OMP
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 PAD_TOKEN = "[PAD]"
 UNK_TOKEN = "[UNK]"
