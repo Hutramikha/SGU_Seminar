@@ -1,5 +1,5 @@
 * Tich cuc
-python visualize.py --sentence "this movie is wonderful and the acting is great"
+python visualize.py --sentence "this movie is absolutely wonderful"
 
 * Tieu cuc
 python visualize.py --sentence "the plot of this film is not good at all"
