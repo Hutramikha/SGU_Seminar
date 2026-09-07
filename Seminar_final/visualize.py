@@ -5,7 +5,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import torch
 
-from model import TransformerClassifier
+# Dynamic import will be used to support both model.py and model_improved.py
 
 # Bo sung: khac phuc loi OMP
 import os
@@ -71,6 +71,11 @@ def main():
         d_model, d_ff = 32, 64
     else:
         d_model, d_ff = 64, 128
+
+    if "improved" in stem:
+        from model_improved import TransformerClassifier
+    else:
+        from model import TransformerClassifier
 
     model = TransformerClassifier(
         vocab_size=meta["vocab_size"],

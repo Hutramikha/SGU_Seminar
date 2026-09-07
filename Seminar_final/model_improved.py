@@ -124,7 +124,7 @@ class TransformerClassifier(nn.Module):
     def forward(self, input_ids):
         # Tạo mask dựa trên PAD token (ID = 0)
         mask = (input_ids != 0).unsqueeze(1) # shape: (batch_size, 1, seq_len)
-        
+        # mask = (input_ids != 0)
         x = self.embedding(input_ids)
         x = self.pos_encoding(x)
         x, attn_weights = self.encoder(x, mask)
