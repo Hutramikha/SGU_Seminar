@@ -109,7 +109,7 @@ def main():
 
     print(f"Sentence: {sentence}")
     print(f"Predicted label: {meta['label_names'][pred]}")
-    
+    print(f"Saved heatmap to: {out_path}")
 
 
 if __name__ == "__main__":
